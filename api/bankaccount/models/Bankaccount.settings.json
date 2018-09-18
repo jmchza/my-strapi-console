@@ -1,0 +1,36 @@
+{
+    "connection": "default",
+    "collectionName": "bankaccount",
+    "info": {
+        "name": "bankaccount",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "iban": {
+            "type": "string",
+            "unique": true
+        },
+        "bic": {
+            "type": "string"
+        },
+        "holderName": {
+            "type": "string"
+        },
+        "bankName": {
+            "type": "string"
+        },
+        "customer": {
+            "model": "customer"
+        },
+        "user": {
+            "model": "user"
+        }
+    }
+}

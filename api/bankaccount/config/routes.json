@@ -1,0 +1,179 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/bankaccounts/finapi",
+            "handler": "Bankaccount.findAllBankAccounts",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/bankaccounts/finapi/banks",
+            "handler": "Bankaccount.getAndSearchAllBanks",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/bankaccounts/finapi",
+            "handler": "Bankaccount.createUserFinapi",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/bankaccounts/connections/import",
+            "handler": "Bankaccount.importBankConnection",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/bankaccounts/connections/edit/:id",
+            "handler": "Bankaccount.editBankConnection",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/bankaccounts/connections/:id",
+            "handler": "Bankaccount.deleteBankConnection",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/bankaccounts/transactions",
+            "handler": "Bankaccount.findTransactionsByAccountIds",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/bankaccounts",
+            "handler": "Bankaccount.find",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/bankaccount/getbic/:iban",
+            "handler": "Bankaccount.getbic"
+        },
+        {
+            "method": "GET",
+            "path": "/bankaccount/:id",
+            "handler": "Bankaccount.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/bankaccount/:id/relationships/:relation",
+            "handler": "Bankaccount.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/bankaccount/:id/:relation",
+            "handler": "Bankaccount.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/bankaccount",
+            "handler": "Bankaccount.create",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/bankaccount/:id",
+            "handler": "Bankaccount.update",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/bankaccount/:id",
+            "handler": "Bankaccount.destroy",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/bankaccount/:id/relationships/:relation",
+            "handler": "Bankaccount.createRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/bankaccount/:id/relationships/:relation",
+            "handler": "Bankaccount.updateRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/bankaccount/:id/relationships/:relation",
+            "handler": "Bankaccount.destroyRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        }
+    ]
+}

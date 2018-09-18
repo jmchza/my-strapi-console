@@ -1,0 +1,35 @@
+{
+    "connection": "default",
+    "collectionName": "person",
+    "info": {
+        "name": "person",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "gender": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "phoneNo": {
+            "type": "string"
+        },
+        "eMail": {
+            "type": "string"
+        },
+        "note": {
+            "type": "string"
+        },
+        "customer": {
+            "model": "customer"
+        }
+    }
+}
