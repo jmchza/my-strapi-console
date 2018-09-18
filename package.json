@@ -19,12 +19,22 @@
     "eslint-plugin-react": "^6.8.0"
   },
   "dependencies": {
+    "bcrypt": "^3.0.0",
+    "chance": "^1.0.16",
+    "co": "^4.6.0",
+    "co-busboy": "^1.4.0",
+    "currency-formatter": "^1.5.1",
+    "joi": "^13.6.0",
+    "knex": "0.13.0",
+    "libphonenumber-js": "^1.4.6",
     "lodash": "4.x.x",
+    "moment-timezone": "^0.5.21",
+    "node-uuid": "^1.4.8",
+    "pg": "7.4.3",
     "strapi": "3.0.0-alpha.14.1.1",
     "strapi-hook-bookshelf": "3.0.0-alpha.14.1.1",
     "strapi-hook-knex": "3.0.0-alpha.14.1.1",
-    "knex": "0.13.0",
-    "pg": "7.4.3"
+    "universal-analytics": "^0.4.17"
   },
   "author": {
     "name": "manuelchouza",

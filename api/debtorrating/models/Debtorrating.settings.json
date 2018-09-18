@@ -1,0 +1,32 @@
+{
+    "connection": "default",
+    "collectionName": "debtorrating",
+    "info": {
+        "name": "debtorrating",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "score": {
+            "type": "float"
+        },
+        "originalScore": {
+            "type": "string"
+        },
+        "reference": {
+            "type": "string"
+        },
+        "debtor": {
+            "model": "customer"
+        },
+        "user": {
+            "model": "user"
+        }
+    }
+}

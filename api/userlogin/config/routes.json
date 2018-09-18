@@ -1,0 +1,146 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/userlogins",
+            "handler": "Userlogin.find",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/userlogin/:id",
+            "handler": "Userlogin.findOne",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        
+        {
+            "method": "GET",
+            "path": "/userlogin/:id/relationships/:relation",
+            "handler": "Userlogin.findOne",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/userlogin/:id/:relation",
+            "handler": "Userlogin.findOne",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/userlogin",
+            "handler": "Userlogin.create",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated",
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/userlogin/forgotpassword",
+            "handler": "Userlogin.forgotPassword"
+        },
+        {
+            "method": "POST",
+            "path": "/userlogin/changepassword",
+            "handler": "Userlogin.changePassword"
+        },
+        {
+            "method": "POST",
+            "path": "/userlogin/add",
+            "handler": "Userlogin.addUserlogin",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/userlogin/:id",
+            "handler": "Userlogin.updateUserlogin",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/userlogin/delete/:id",
+            "handler": "Userlogin.deleteUserlogin",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/userlogin/:id",
+            "handler": "Userlogin.update",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/userlogin/:id",
+            "handler": "Userlogin.destroy",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/userlogin/:id/relationships/:relation",
+            "handler": "Userlogin.createRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/userlogin/:id/relationships/:relation",
+            "handler": "Userlogin.updateRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/userlogin/:id/relationships/:relation",
+            "handler": "Userlogin.destroyRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        }
+    ]
+}

@@ -22,7 +22,10 @@
     "test": "npm run lint",
     "prepublishOnly": "npm run build"
   },
-  "dependencies": {},
+  "dependencies": {
+    "chance": "^1.0.9",
+    "react-table": "^6.8.6"
+  },
   "devDependencies": {
     "strapi-helper-plugin": "3.0.0-alpha.14.1.1"
   },

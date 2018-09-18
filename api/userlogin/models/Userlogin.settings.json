@@ -1,0 +1,59 @@
+{
+    "connection": "default",
+    "collectionName": "userlogin",
+    "info": {
+        "name": "userlogin",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "email": {
+            "type": "string"
+        },
+        "firstName": {
+            "type": "string"
+        },
+        "lastName": {
+            "type": "string"
+        },
+        "phone": {
+            "type": "string"
+        },
+        "role": {
+            "type": "string"
+        },
+        "gender": {
+            "type": "string",
+            "defaultTo": "male"
+        },
+        "title": {
+            "type": "string"
+        },
+        "passwordHash": {
+            "type": "string"
+        },
+        "resetToken": {
+            "type": "string"
+        },
+        "resetTokenExpires": {
+            "type": "datetime"
+        },
+        "isMain": {
+            "type": "boolean",
+            "defaultTo": false
+        },
+        "user": {
+            "model": "user"
+        },
+        "isVerified": {
+            "type": "boolean",
+            "defaultTo": true
+        }
+    }
+}

@@ -14,6 +14,9 @@ import { bindActionCreators, compose } from 'redux';
 import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
 
+import ReactTable from "react-table";
+import "react-table/react-table.css";
+import Customer from 'components/Customer';
 // Selectors
 import selectHomePage from './selectors';
 
@@ -27,6 +30,7 @@ export class HomePage extends React.Component {
   render() {
     return (
       <div className={styles.homePage}>
+        <Customer />
       </div>
     );
   }

@@ -1,0 +1,124 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/customers",
+            "handler": "Customer.find",
+            "config": {
+                "policies": [
+                    
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/customer/generate/customer-number",
+            "handler": "Customer.generateCustomerNumber",
+            "config": {
+                "policies": [
+                    
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/customer/:id",
+            "handler": "Customer.findOne",
+            "config": {
+                "policies": [
+                    
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/customer/:id/relationships/:relation",
+            "handler": "Customer.findOne",
+            "config": {
+                "policies": [
+                    
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/customer/:id/:relation",
+            "handler": "Customer.findOne",
+            "config": {
+                "policies": [
+                    
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/customer",
+            "handler": "Customer.create",
+            "config": {
+                "policies": [
+                    
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/customer/:id",
+            "handler": "Customer.update",
+            "config": {
+                "policies": [
+                    
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/user/customer/:id",
+            "handler": "Customer.deleteCustomer",
+            "config": {
+                "policies": [
+                    
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/customer/:id",
+            "handler": "Customer.destroy",
+            "config": {
+                "policies": [
+                    
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/customer/:id/relationships/:relation",
+            "handler": "Customer.createRelation",
+            "config": {
+                "policies": [
+                    
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/customer/:id/relationships/:relation",
+            "handler": "Customer.updateRelation",
+            "config": {
+                "policies": [
+                    
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/customer/:id/relationships/:relation",
+            "handler": "Customer.destroyRelation",
+            "config": {
+                "policies": [
+                    
+                ]
+            }
+        }
+    ]
+}

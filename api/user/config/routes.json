@@ -1,0 +1,175 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/user/decimoComplete",
+            "handler": "User.callbackDecimo",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/users",
+            "handler": "User.find",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/user/customers",
+            "handler": "User.getCustomers",
+            "type": "customer",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/user/user-overview",
+            "handler": "User.userOverview",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/user/:id",
+            "handler": "User.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/user/login",
+            "handler": "User.getLoginUser",
+            "config": {
+                "policies": [
+                    "global.isRegistered"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/user/:id/relationships/:relation",
+            "handler": "User.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/user/:id/:relation",
+            "handler": "User.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/user/profile/image/:id",
+            "handler": "upload.downloadImage",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/user",
+            "handler": "User.create",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/user/:id",
+            "handler": "User.update",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/user/:id",
+            "handler": "User.destroy",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/user/decimo/principal",
+            "handler": "User.createDecimoPrincipal",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/user/:id/relationships/:relation",
+            "handler": "User.createRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/user/:id/relationships/:relation",
+            "handler": "User.updateRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/user/profile/image/:type",
+            "handler": "User.deleteUserImage",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/user/:id/relationships/:relation",
+            "handler": "User.destroyRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        }
+    ]
+}

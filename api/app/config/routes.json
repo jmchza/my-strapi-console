@@ -1,0 +1,54 @@
+{
+    "routes": [
+        {
+            "method": "POST",
+            "path": "/login",
+            "handler": "App.login"
+        },
+        {
+            "method": "GET",
+            "path": "/logout",
+            "handler": "App.logout"
+        },
+        {
+            "method": "POST",
+            "path": "/app/update-decimo-order",
+            "handler": "App.updateDecimoOrder"
+        },
+        {
+            "method": "GET",
+            "path": "/app/countries",
+            "handler": "App.getAllCountry",
+            "config": {
+                "policies": [
+                    "global.isSeller"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/version",
+            "handler": "App.version",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/app/models",
+            "handler": "App.getStrapiModel",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/verifyphonenumber",
+            "handler": "App.verifyPhoneNumber"
+        }
+    ]
+}

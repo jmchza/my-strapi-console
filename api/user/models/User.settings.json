@@ -1,0 +1,179 @@
+{
+    "connection": "default",
+    "collectionName": "user",
+    "info": {
+        "name": "user",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "executiveName": {
+            "type": "string"
+        },
+        "valueAddedTaxId": {
+            "type": "string"
+        },
+        "taxIdentNumber": {
+            "type": "string"
+        },
+        "companyName": {
+            "type": "string"
+        },
+        "street": {
+            "type": "string"
+        },
+        "postcode": {
+            "type": "string"
+        },
+        "city": {
+            "type": "string"
+        },
+        "country": {
+            "type": "string"
+        },
+        "phone": {
+            "type": "string"
+        },
+        "isPrivate": {
+            "type": "boolean",
+            "defaultTo": "true"
+        },
+        "isBuyer": {
+            "type": "boolean",
+            "defaultTo": "true"
+        },
+        "isSeller": {
+            "type": "boolean",
+            "defaultTo": "true"
+        },
+        "isValidated": {
+            "type": "boolean",
+            "defaultTo": "false"
+        },
+        "hasValidDirectDebitMandate": {
+            "type": "boolean",
+            "defaultTo": "false"
+        },
+        "isBlocked": {
+            "type": "boolean",
+            "defaultTo": "false"
+        },
+        "loginAttempts": {
+            "type": "integer"
+        },
+        "walletID": {
+            "type": "string"
+        },
+        "currentPlan": {
+            "type": "string",
+            "defaultTo": "startup"
+        },
+        "tradeRegisterNumber": {
+            "type": "string"
+        },
+        "registryCourt": {
+            "type": "string"
+        },
+        "supervisoryBoardChairman": {
+            "type": "string"
+        },
+        "bankaccounts": {
+            "collection": "bankaccount",
+            "via": "user"
+        },
+        "primaryBankaccount": {
+            "model": "bankaccount"
+        },
+        "industry": {
+            "model": "industry"
+        },
+        "legalform": {
+            "model": "legalform"
+        },
+        "companyLogo": {
+            "model": "upload"
+        },
+        "notifications": {
+            "collection": "notification",
+            "via": "recipient"
+        },
+        "userlogins": {
+            "collection": "userlogin",
+            "via": "user"
+        },
+        "userSettings": {
+            "collection": "usersetting",
+            "via": "user"
+        },
+        "invoices": {
+            "collection": "invoice",
+            "via": "owner"
+        },
+        "settlements": {
+            "collection": "settlement",
+            "via": "owner"
+        },
+        "lastLogin": {
+            "type": "datetime"
+        },
+        "role": {
+            "type": "string",
+            "defaultTo": "user"
+        },
+        "customers": {
+            "collection": "customer",
+            "via": "user"
+        },
+        "identification": {
+            "model": "identification"
+        },
+        "ratings": {
+            "collection": "debtorrating",
+            "via": "user"
+        },
+        "riskcheckRating": {
+            "type": "string"
+        },
+        "files": {
+            "collection": "upload",
+            "via": "user"
+        },
+        "isSeed": {
+            "type": "boolean",
+            "defaultTo": "false"
+        },
+        "statusUpdates": {
+            "collection": "statushistory",
+            "via": "reference"
+        },
+        "activationCode": {
+            "type": "string"
+        },
+        "clientId": {
+            "type": "string"
+        },
+        "activeBanking": {
+            "type": "boolean",
+            "defaultTo": "false"
+        },
+        "birthday": {
+            "type": "date"
+        },
+        "address": {
+            "type": "string"
+        },
+        "principalDecimoId": {
+            "type": "string"
+        },
+        "statushistory": {
+            "model": "statushistory",
+            "via": "reference"
+        }
+    }
+}

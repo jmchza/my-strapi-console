@@ -1,0 +1,104 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/debtorratings",
+            "handler": "Debtorrating.find",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/debtorrating/:id",
+            "handler": "Debtorrating.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/debtorrating/:id/relationships/:relation",
+            "handler": "Debtorrating.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/debtorrating/:id/:relation",
+            "handler": "Debtorrating.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/debtorrating",
+            "handler": "Debtorrating.create",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/debtorrating/:id",
+            "handler": "Debtorrating.update",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/debtorrating/:id",
+            "handler": "Debtorrating.destroy",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/debtorrating/:id/relationships/:relation",
+            "handler": "Debtorrating.createRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/debtorrating/:id/relationships/:relation",
+            "handler": "Debtorrating.updateRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/debtorrating/:id/relationships/:relation",
+            "handler": "Debtorrating.destroyRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        }
+    ]
+}

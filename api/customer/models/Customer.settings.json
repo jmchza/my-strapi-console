@@ -1,0 +1,107 @@
+{
+    "connection": "default",
+    "collectionName": "customer",
+    "info": {
+        "name": "customer",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "isCompany": {
+            "type": "boolean",
+            "defaultsTo": false
+        },
+        "name": {
+            "type": "string"
+        },
+        "firstName": {
+            "type": "string"
+        },
+        "lastName": {
+            "type": "string"
+        },
+        "nameAuthorisedSignatory": {
+            "type": "string"
+        },
+        "address": {
+            "type": "string"
+        },
+        "postcode": {
+            "type": "string"
+        },
+        "city": {
+            "type": "string"
+        },
+        "country": {
+            "type": "string"
+        },
+        "ratings": {
+            "collection": "debtorrating",
+            "via": "debtor"
+        },
+        "email": {
+            "type": "string"
+        },
+        "category": {
+            "type": "string"
+        },
+        "faktooraId": {
+            "type": "string"
+        },
+        "extras": {
+            "type": "json"
+        },
+        "customerId": {
+            "type": "string"
+        },
+        "note": {
+            "type": "string"
+        },
+        "vatId": {
+            "type": "string"
+        },
+        "taxId": {
+            "type": "string"
+        },
+        "phoneNo": {
+            "type": "string"
+        },
+        "faxNo": {
+            "type": "string"
+        },
+        "gender": {
+            "type": "string"
+        },
+        "title": {
+            "type": "string"
+        },
+        "isDelete": {
+            "type": "boolean",
+            "defaultsTo": false
+        },
+        "bankAccounts": {
+            "collection": "bankaccount",
+            "via": "customer"
+        },
+        "contactPersons": {
+            "collection": "person",
+            "via": "customer"
+        },
+        "user": {
+            "model": "user"
+        },
+        "invoices": {
+            "collection": "invoice",
+            "via": "debtor"
+        },
+        "legalform": {
+            "model": "legalform"
+        }
+    }
+}
