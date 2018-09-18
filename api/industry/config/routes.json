@@ -1,0 +1,54 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/industries",
+            "handler": "Industry.find"
+        },
+        {
+            "method": "GET",
+            "path": "/industrys",
+            "handler": "Industry.find",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/industry/:id",
+            "handler": "Industry.findOne"
+        },
+        {
+            "method": "POST",
+            "path": "/industry",
+            "handler": "Industry.create",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/industry/:id",
+            "handler": "Industry.update",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/industry/:id",
+            "handler": "Industry.destroy",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        }
+    ]
+}

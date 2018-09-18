@@ -104,17 +104,17 @@ module.exports = {
     return customer
   },
   search: function(ctx) {
-    // if (typeof ctx.params.needle !== "string" || ctx.params.needle === "") {
-    //   return Customer.query(qb => {
-    //     qb.where("user", "=", ctx.session.passport.user.id)
-    //     qb.where("isDelete", "=", false)
-    //     qb.orderBy("updated_at", "desc")
-    //   }).fetchPage({ limit: 20 })
-    // }
+    if (typeof ctx.params.needle !== "string" || ctx.params.needle === "") {
+      return Customer.query(qb => {
+        qb.where("user", "=", ctx.session.passport.user.id)
+        qb.where("isDelete", "=", false)
+        qb.orderBy("updated_at", "desc")
+      }).fetchPage({ limit: 20 })
+    }
     const needle = `%${ctx.params.needle}%`
     return Customer.query(qb => {
-      // qb.where("user", "=", ctx.session.passport.user.id)
-      // qb.where("isDelete", "=", false)
+      qb.where("user", "=", ctx.session.passport.user.id)
+      qb.where("isDelete", "=", false)
       qb.where(function() {
         this.where("name", "ILIKE", needle)
         this.orWhere("nameAuthorisedSignatory", "ILIKE", needle)

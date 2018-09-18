@@ -1,0 +1,59 @@
+{
+    "routes": [
+        {
+            "method": "POST",
+            "path": "/contact",
+            "handler": "Contact.feedBack"
+        },
+        {
+            "method": "POST",
+            "path": "/error-reporting",
+            "handler": "Contact.createErrorReporting",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/contacts",
+            "handler": "Contact.find",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/contact/:id",
+            "handler": "Contact.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/contact/:id",
+            "handler": "Contact.update",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/contact/:id",
+            "handler": "Contact.destroy",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        }
+    ]
+}

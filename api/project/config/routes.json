@@ -1,0 +1,34 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/projects",
+            "handler": "Project.findAll",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/project",
+            "handler": "Project.create",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/project/:id",
+            "handler": "Project.findOne",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        }
+    ]
+}

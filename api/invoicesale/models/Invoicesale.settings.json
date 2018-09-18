@@ -1,0 +1,67 @@
+{
+    "connection": "default",
+    "collectionName": "invoicesale",
+    "info": {
+        "name": "invoicesale",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "debtorRating": {
+            "type": "decimal"
+        },
+        "minimumBid": {
+            "type": "decimal"
+        },
+        "selloutBid": {
+            "type": "decimal"
+        },
+        "sendInvoice": {
+            "type": "boolean",
+            "defaultTo": "false"
+        },
+        "sentInvoice": {
+            "type": "boolean",
+            "defaultTo": "false"
+        },
+        "subrogationLetter": {
+            "model": "upload"
+        },
+        "assignmentAgreement": {
+            "model": "upload"
+        },
+        "highestBid": {
+            "type": "decimal"
+        },
+        "bids": {
+            "collection": "bid",
+            "via": "invoicesale"
+        },
+        "winningBid": {
+            "model": "bid"
+        },
+        "transactions": {
+            "collection": "transaction",
+            "via": "invoice"
+        },
+        "buyerStatus": {
+            "type": "string",
+            "defaultTo": "started"
+        },
+        "buyer": {
+            "model": "user"
+        },
+        "debtorRegion": {
+            "type": "string"
+        },
+        "invoice": {
+            "model": "invoice"
+        }
+    }
+}

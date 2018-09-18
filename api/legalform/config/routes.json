@@ -1,0 +1,49 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/legalforms",
+            "handler": "Legalform.find"
+        },
+        {
+            "method": "GET",
+            "path": "/legalform/:id",
+            "handler": "Legalform.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/legalform",
+            "handler": "Legalform.create",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/legalform/:id",
+            "handler": "Legalform.update",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/legalform/:id",
+            "handler": "Legalform.destroy",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        }
+    ]
+}

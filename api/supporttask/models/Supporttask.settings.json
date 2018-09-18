@@ -1,0 +1,30 @@
+{
+    "connection": "default",
+    "collectionName": "supporttask",
+    "info": {
+        "name": "supporttask",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "type": {
+            "type": "string"
+        },
+        "data": {
+            "type": "json"
+        },
+        "comment": {
+            "type": "string"
+        },
+        "status": {
+            "type": "string",
+            "defaultTo": "created"
+        }
+    }
+}

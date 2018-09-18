@@ -1,0 +1,44 @@
+{
+    "connection": "default",
+    "collectionName": "settlement",
+    "info": {
+        "name": "settlement",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "amount": {
+            "type": "decimal"
+        },
+        "billingPeriod": {
+            "type": "date"
+        },
+        "owner": {
+            "model": "user"
+        },
+        "upload": {
+            "model": "upload"
+        },
+        "extras": {
+            "type": "json"
+        },
+        "faktooraId": {
+            "type": "string",
+            "unique": true
+        },
+        "paid": {
+            "type": "string",
+            "defaultTo": "unpaid"
+        },
+        "document": {
+            "model": "document",
+            "via": "reference"
+        }
+    }
+}

@@ -1,0 +1,54 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/settings",
+            "handler": "Setting.find",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/setting/:id",
+            "handler": "Setting.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/setting",
+            "handler": "Setting.create",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/setting/:id",
+            "handler": "Setting.update",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/setting/:id",
+            "handler": "Setting.destroy",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        }
+    ]
+}

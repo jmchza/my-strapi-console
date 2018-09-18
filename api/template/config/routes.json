@@ -1,0 +1,106 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/templates",
+            "handler": "Template.find",
+            "config": {
+                "policies": [
+                    "global.isAdmin",
+                    "global.isSeller"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/template/:id",
+            "handler": "Template.findOne",
+            "config": {
+                "policies": [
+                    "global.isSeller"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/template/:id/relationships/:relation",
+            "handler": "Template.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/template/:id/:relation",
+            "handler": "Template.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/template",
+            "handler": "Template.create",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/template/:id",
+            "handler": "Template.update",
+            "config": {
+                "policies": [
+                    "global.isAdmin",
+                    "global.isSeller"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/template/:id",
+            "handler": "Template.destroy",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/template/:id/relationships/:relation",
+            "handler": "Template.createRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/template/:id/relationships/:relation",
+            "handler": "Template.updateRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/template/:id/relationships/:relation",
+            "handler": "Template.destroyRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        }
+    ]
+}

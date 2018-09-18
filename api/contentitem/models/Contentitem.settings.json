@@ -1,0 +1,27 @@
+{
+    "connection": "default",
+    "collectionName": "contentitem",
+    "info": {
+        "name": "contentitem",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": false,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "key": {
+            "type": "string"
+        },
+        "language": {
+            "type": "string",
+            "defaultTo": "de-DE"
+        },
+        "value": {
+            "type": "text"
+        }
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "connection": "default",
+    "collectionName": "document",
+    "info": {
+        "name": "document",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "user": {
+            "model": "user"
+        },
+        "customer": {
+            "model": "customer"
+        },
+        "upload": {
+            "model": "upload"
+        },
+        "category": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "reference": {
+            "model": "*",
+            "filter": "field"
+        },
+        "extras": {
+            "type": "json"
+        },
+        "status": {
+            "type": "string",
+            "defaultTo": "created"
+        },
+        "documentType": {
+            "type": "string"
+        },
+        "faktooraId": {
+            "type": "string"
+        }
+    }
+}

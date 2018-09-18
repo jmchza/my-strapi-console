@@ -1,0 +1,30 @@
+{
+    "connection": "default",
+    "collectionName": "bid",
+    "info": {
+        "name": "bid",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "amount": {
+            "type": "decimal"
+        },
+        "paymentMethod": {
+            "type": "string",
+            "defaultTo": null
+        },
+        "invoicesale": {
+            "model": "invoicesale"
+        },
+        "bidder": {
+            "model": "user"
+        }
+    }
+}

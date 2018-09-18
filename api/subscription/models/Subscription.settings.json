@@ -1,0 +1,39 @@
+{
+    "connection": "default",
+    "collectionName": "subscription",
+    "info": {
+        "name": "subscription",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "plan": {
+            "type": "string"
+        },
+        "user": {
+            "model": "user"
+        },
+        "price": {
+            "type": "decimal"
+        },
+        "isCurrent": {
+            "type": "boolean",
+            "defaultTo": "true"
+        },
+        "startDate": {
+            "type": "date"
+        },
+        "endDate": {
+            "type": "date"
+        },
+        "period": {
+            "type": "string"
+        }
+    }
+}

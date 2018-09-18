@@ -1,0 +1,54 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/usersettings",
+            "handler": "Usersetting.find",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/usersetting/:id",
+            "handler": "Usersetting.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/usersetting",
+            "handler": "Usersetting.create",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/usersetting/:id",
+            "handler": "Usersetting.update",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/usersetting/:id",
+            "handler": "Usersetting.destroy",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "connection": "default",
+    "collectionName": "settings",
+    "info": {
+        "name": "setting",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": false,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "key": {
+            "type": "string"
+        },
+        "value": {
+            "type": "json"
+        }
+    }
+}

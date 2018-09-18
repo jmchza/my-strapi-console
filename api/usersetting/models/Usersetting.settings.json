@@ -1,0 +1,26 @@
+{
+    "connection": "default",
+    "collectionName": "usersetting",
+    "info": {
+        "name": "usersetting",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "user": {
+            "model": "user"
+        },
+        "key": {
+            "type": "string"
+        },
+        "value": {
+            "type": "json"
+        }
+    }
+}

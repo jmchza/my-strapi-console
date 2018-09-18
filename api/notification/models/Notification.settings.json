@@ -1,0 +1,36 @@
+{
+    "connection": "default",
+    "collectionName": "notification",
+    "info": {
+        "name": "notification",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "type": {
+            "type": "string"
+        },
+        "actionUrl": {
+            "type": "string"
+        },
+        "data": {
+            "type": "json"
+        },
+        "read": {
+            "type": "boolean",
+            "defaultTo": "false"
+        },
+        "invoice": {
+            "model": "invoice"
+        },
+        "recipient": {
+            "model": "user"
+        }
+    }
+}

@@ -1,0 +1,60 @@
+{
+    "connection": "default",
+    "collectionName": "product",
+    "info": {
+        "name": "product",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "user": {
+            "model": "user"
+        },
+        "code": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "unit": {
+            "type": "string"
+        },
+        "tax": {
+            "type": "decimal"
+        },
+        "price": {
+            "type": "decimal"
+        },
+        "inventoryCount": {
+            "type": "decimal"
+        },
+        "time": {
+            "type": "integer",
+            "defaultTo": "0"
+        },
+        "estimate": {
+            "type": "integer",
+            "defaultTo": "0"
+        },
+        "progress": {
+            "type": "decimal",
+            "defaultTo": "0.0"
+        },
+        "status": {
+            "type": "string",
+            "defaultTo": "publish"
+        },
+        "project": {
+            "model": "project"
+        }
+    }
+}

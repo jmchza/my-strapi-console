@@ -1,0 +1,84 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/download/:id",
+            "handler": "Upload.downloadFile",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/download/image/:id",
+            "handler": "Upload.downloadImage",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/uploads",
+            "handler": "Upload.find",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/upload/:id",
+            "handler": "Upload.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/upload",
+            "handler": "Upload.create",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/upload/file",
+            "handler": "Upload.upload",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/upload/:id",
+            "handler": "Upload.update",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/upload/:id",
+            "handler": "Upload.destroy",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        }
+    ]
+}

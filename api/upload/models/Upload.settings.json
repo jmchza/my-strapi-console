@@ -1,0 +1,42 @@
+{
+    "connection": "default",
+    "collectionName": "upload",
+    "info": {
+        "name": "upload",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "filename": {
+            "type": "string"
+        },
+        "displayName": {
+            "type": "string"
+        },
+        "path": {
+            "type": "string"
+        },
+        "size": {
+            "type": "integer"
+        },
+        "uploadType": {
+            "type": "string"
+        },
+        "identification": {
+            "model": "identification"
+        },
+        "user": {
+            "model": "user"
+        },
+        "document": {
+            "model": "document",
+            "via": "reference"
+        }
+    }
+}

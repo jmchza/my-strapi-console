@@ -1,0 +1,56 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/subscriptions",
+            "handler": "Subscription.find",
+            "type": "subscription",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/subscription/:id",
+            "handler": "Subscription.findOne",
+            "type": "subscription",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/subscription",
+            "handler": "Subscription.create",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/subscription/:id",
+            "handler": "Subscription.update",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/subscription/:id",
+            "handler": "Subscription.destroy",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        }
+    ]
+}

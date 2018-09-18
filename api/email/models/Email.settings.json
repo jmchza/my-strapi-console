@@ -1,0 +1,54 @@
+{
+    "connection": "default",
+    "collectionName": "email",
+    "info": {
+        "name": "email",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "from": {
+            "type": "string"
+        },
+        "to": {
+            "type": "string"
+        },
+        "cc": {
+            "type": "string"
+        },
+        "bcc": {
+            "type": "string"
+        },
+        "subject": {
+            "type": "string"
+        },
+        "data": {
+            "type": "json"
+        },
+        "html": {
+            "type": "string"
+        },
+        "isSent": {
+            "type": "boolean",
+            "defaultTo": "false"
+        },
+        "lang": {
+            "type": "string"
+        },
+        "template": {
+            "type": "string"
+        },
+        "attachments": {
+            "type": "json"
+        },
+        "user": {
+            "model": "user"
+        }
+    }
+}

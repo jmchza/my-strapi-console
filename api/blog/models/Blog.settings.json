@@ -1,0 +1,27 @@
+{
+    "connection": "default",
+    "collectionName": "blog",
+    "info": {
+        "name": "blog",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "updatedDate": {
+            "type": "date"
+        },
+        "category": {
+            "type": "string",
+            "defaultTo": "forUser"
+        },
+        "content": {
+            "type": "text"
+        }
+    }
+}

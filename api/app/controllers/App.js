@@ -1,7 +1,7 @@
 "use strict"
 
 const ua = require("universal-analytics")
-// const countries = require("document-generator/lib/countries.json")
+const countries = require("document-generator/lib/countries.json")
 // const routes = require('../config/oauth2');
 
 module.exports = {
@@ -45,12 +45,12 @@ module.exports = {
     var ctx = ctx
     ctx.request.nojsonapi = true
     const { email } = ctx.request.body || {}
-    // const checkExitsEmail = await Userlogin.forge({ email }).fetch()
-    // if (!checkExitsEmail) {
-    //   ctx.body = { wrongEmail: true }
-    //   ctx.status = 403
-    //   return
-    // }
+    const checkExitsEmail = await Userlogin.forge({ email }).fetch()
+    if (!checkExitsEmail) {
+      ctx.body = { wrongEmail: true }
+      ctx.status = 403
+      return
+    }
     await ctx.state._passport.instance
       .authenticate("local", async function(err, user, info) {
         if (err) {
@@ -148,13 +148,28 @@ module.exports = {
    * @apiGroup App
    *
    */
-  // getAllCountry: async (ctx) => {
-  //   var ctx = ctx
-  //   ctx.request.nojsonapi = true
-  //   ctx.body = countries
+  getAllCountry: async (ctx) => {
+    var ctx = ctx
+    ctx.request.nojsonapi = true
+    ctx.body = countries
 
-    
-  // },
+    // console.log(ctx.passport._passport);
+    // console.log('::::: ' + ctx.server);
+    // await ctx.state._passport.instance
+    //   .authenticate("bearer", { session: false }, async function(err, user, info) {
+    //     if (err) {
+    //       console.log(err, user, info)
+    //     }
+    //     if (info !== undefined) {
+    //       console.log(info)
+    //       ctx.body = { error: info }
+    //     } else {
+    //       console.log("user: " + user + " info: " + info)
+    //       ctx.body = countries
+    //     }
+    //   })
+    //   (ctx)
+  },
 
   /**
    * @api {get} /app/models

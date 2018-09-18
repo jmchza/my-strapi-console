@@ -20,7 +20,11 @@
                 ]
             }
         },
-        
+        {
+            "method": "GET",
+            "path": "/userlogin/emailcheck/:email/id/:id",
+            "handler": "Account.checkEmailExist"
+        },
         {
             "method": "GET",
             "path": "/userlogin/:id/relationships/:relation",

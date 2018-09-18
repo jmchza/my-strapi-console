@@ -1,0 +1,56 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/supporttasks",
+            "handler": "Supporttask.find",
+            "type": "supporttask",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/supporttask/:id",
+            "handler": "Supporttask.findOne",
+            "type": "supporttask",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/supporttask",
+            "handler": "Supporttask.create",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/supporttask/:id",
+            "handler": "Supporttask.update",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/supporttask/:id",
+            "handler": "Supporttask.destroy",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        }
+    ]
+}

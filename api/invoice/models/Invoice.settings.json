@@ -1,0 +1,119 @@
+{
+    "connection": "default",
+    "collectionName": "invoice",
+    "info": {
+        "name": "invoice",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "amount": {
+            "type": "decimal"
+        },
+        "outstandingBalance": {
+            "type": "decimal"
+        },
+        "debtorHasPaid": {
+            "type": "boolean",
+            "defaultTo": "false"
+        },
+        "faktooraId": {
+            "type": "string",
+            "unique": true
+        },
+        "issueDate": {
+            "type": "date"
+        },
+        "invoiceNumber": {
+            "type": "string"
+        },
+        "invoiceOrderNumber": {
+            "type": "string"
+        },
+        "paymentControl": {
+            "type": "boolean",
+            "defaultTo": "false"
+        },
+        "lastPaymentDate": {
+            "description": "The last possible date when the invoice has to be paid",
+            "type": "date"
+        },
+        "paymentDate": {
+            "type": "date"
+        },
+        "invoicepositions": {
+            "collection": "invoiceposition",
+            "via": "invoice"
+        },
+        "data": {
+            "type": "json"
+        },
+        "owner": {
+            "model": "user"
+        },
+        "debtor": {
+            "model": "customer"
+        },
+        "letters": {
+            "collection": "letter",
+            "via": "invoice"
+        },
+        "invoiceFile": {
+            "model": "upload"
+        },
+        "industry": {
+            "model": "industry"
+        },
+        "invoicesale": {
+            "model": "invoicesale"
+        },
+        "subject": {
+            "type": "string"
+        },
+        "salutation": {
+            "type": "string"
+        },
+        "greeting": {
+            "type": "string"
+        },
+        "signature": {
+            "model": "upload"
+        },
+        "signatureName": {
+            "type": "string"
+        },
+        "status": {
+            "type": "string",
+            "defaultTo": "draft"
+        },
+        "isSeed": {
+            "type": "boolean",
+            "defaultTo": "false"
+        },
+        "transactions": {
+            "collection": "transaction",
+            "via": "invoice"
+        },
+        "statusUpdates": {
+            "collection": "statushistory",
+            "via": "reference"
+        },
+        "clientId": {
+            "type": "string"
+        },
+        "document": {
+            "model": "document",
+            "via": "reference"
+        },
+        "statushistory": {
+            "model": "statushistory",
+            "via": "reference"
+        }
+    }
+}

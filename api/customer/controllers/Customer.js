@@ -13,13 +13,9 @@ module.exports = {
    */
 
   find: async (ctx) => {
-    const { _id } = ctx.state.user;
-
-    console.log('id', _id);
-
     try {
-      // ctx.body = await strapi.services.jsonapi.fetchAll(strapi.models.customer, ctx.query)
-      ctx.body = await strapi.services.customer.search(ctx.query)
+      ctx.body = await strapi.services.jsonapi.fetchAll(strapi.models.customer, ctx.query)
+      // strapi.services.invoice.fetchAll(ctx.query);
     } catch (err) {
       if (err.status === undefined) {
         console.log(err)

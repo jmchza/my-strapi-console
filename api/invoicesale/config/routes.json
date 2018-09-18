@@ -1,0 +1,137 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/invoicesales",
+            "handler": "Invoicesale.find",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/invoicesale/:id",
+            "handler": "Invoicesale.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/invoicesale/:id/relationships/:relation",
+            "handler": "Invoicesale.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/invoicesale/:id/:relation",
+            "handler": "Invoicesale.findOne",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/invoicesale",
+            "handler": "Invoicesale.create",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/invoicesale/:id",
+            "handler": "Invoicesale.update",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/invoicesale/:id/acceptbid",
+            "handler": "Invoicesale.acceptbid",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated",
+                    "global.isSeller"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/invoicesale/:id/acceptbid/:bidid",
+            "handler": "Invoicesale.acceptbid",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated",
+                    "global.isSeller"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/invoicesale/:id/abort",
+            "handler": "Invoicesale.abort",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated",
+                    "global.isSeller"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/invoicesale/:id",
+            "handler": "Invoicesale.destroy",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/invoicesale/:id/relationships/:relation",
+            "handler": "Invoicesale.createRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/invoicesale/:id/relationships/:relation",
+            "handler": "Invoicesale.updateRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/invoicesale/:id/relationships/:relation",
+            "handler": "Invoicesale.destroyRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        }
+    ]
+}

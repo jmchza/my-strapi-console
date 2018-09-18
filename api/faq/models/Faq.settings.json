@@ -1,0 +1,31 @@
+{
+    "connection": "default",
+    "collectionName": "faq",
+    "info": {
+        "name": "faq",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "category": {
+            "type": "string",
+            "defaultTo": "general"
+        },
+        "language": {
+            "type": "string",
+            "defaultTo": "en"
+        },
+        "question": {
+            "type": "text"
+        },
+        "answer": {
+            "type": "text"
+        }
+    }
+}

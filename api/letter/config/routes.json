@@ -1,0 +1,84 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/letters",
+            "handler": "Letter.find",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/letter/:id",
+            "handler": "Letter.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/letter/new",
+            "handler": "Letter.createOrEditLetter",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/letter",
+            "handler": "Letter.create",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/letter/:id",
+            "handler": "Letter.update",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/letter/:id/edit",
+            "handler": "Letter.createOrEditLetter",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/letter/:id",
+            "handler": "Letter.destroy",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/letter/new-reminder",
+            "handler": "Letter.createReminder",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        }
+    ]
+}

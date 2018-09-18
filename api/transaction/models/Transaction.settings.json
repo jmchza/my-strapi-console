@@ -1,0 +1,52 @@
+{
+    "connection": "default",
+    "collectionName": "transaction",
+    "info": {
+        "name": "transaction",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "paymentType": {
+            "type": "string"
+        },
+        "paymentMethod": {
+            "type": "string"
+        },
+        "transactionId": {
+            "type": "string",
+            "unique": true
+        },
+        "amount": {
+            "type": "decimal"
+        },
+        "reference": {
+            "type": "string"
+        },
+        "executionDate": {
+            "type": "date"
+        },
+        "state": {
+            "type": "string",
+            "defaultTo": "started"
+        },
+        "invoice": {
+            "model": "invoice"
+        },
+        "benefactor": {
+            "model": "user"
+        },
+        "beneficiary": {
+            "model": "user"
+        },
+        "benefactorDebtor": {
+            "model": "customer"
+        }
+    }
+}

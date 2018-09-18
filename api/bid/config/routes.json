@@ -1,0 +1,116 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/biddings/:invoicesale",
+            "handler": "Bid.getBidsOfInvoice",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/bids",
+            "handler": "Bid.find",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/bid/:id",
+            "handler": "Bid.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/bid/:id/relationships/:relation",
+            "handler": "Bid.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/bid/:id/:relation",
+            "handler": "Bid.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/bid",
+            "handler": "Bid.create",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated",
+                    "global.isBuyer",
+                    "global.isValidated"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/bid/:id",
+            "handler": "Bid.update",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/bid/:id",
+            "handler": "Bid.destroy",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/bid/:id/relationships/:relation",
+            "handler": "Bid.createRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/bid/:id/relationships/:relation",
+            "handler": "Bid.updateRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/bid/:id/relationships/:relation",
+            "handler": "Bid.destroyRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        }
+    ]
+}

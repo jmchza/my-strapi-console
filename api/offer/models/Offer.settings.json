@@ -1,0 +1,56 @@
+{
+    "connection": "default",
+    "collectionName": "offer",
+    "info": {
+        "name": "offer",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "owner": {
+            "model": "user"
+        },
+        "customer": {
+            "model": "customer"
+        },
+        "amount": {
+            "type": "decimal"
+        },
+        "issueDate": {
+            "type": "date"
+        },
+        "offerNumber": {
+            "type": "string"
+        },
+        "offerOrderNumber": {
+            "type": "string"
+        },
+        "lastPaymentDate": {
+            "type": "date"
+        },
+        "data": {
+            "type": "json"
+        },
+        "status": {
+            "type": "string",
+            "defaultTo": "draft"
+        },
+        "faktooraId": {
+            "type": "string",
+            "unique": true
+        },
+        "clientId": {
+            "type": "string"
+        },
+        "document": {
+            "model": "document",
+            "via": "reference"
+        }
+    }
+}

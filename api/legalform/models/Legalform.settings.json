@@ -1,0 +1,29 @@
+{
+    "connection": "default",
+    "collectionName": "legalform",
+    "info": {
+        "name": "legalform",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": false,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "abbrev": {
+            "type": "string"
+        },
+        "nameEn": {
+            "type": "string"
+        },
+        "nameDe": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        }
+    }
+}

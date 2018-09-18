@@ -1,0 +1,32 @@
+{
+    "connection": "default",
+    "collectionName": "invoiceposition",
+    "info": {
+        "name": "invoiceposition",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "quantity": {
+            "type": "decimal"
+        },
+        "price": {
+            "type": "decimal"
+        },
+        "description": {
+            "type": "string"
+        },
+        "tax": {
+            "type": "decimal"
+        },
+        "invoice": {
+            "model": "invoice"
+        }
+    }
+}

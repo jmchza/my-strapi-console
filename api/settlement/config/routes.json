@@ -1,0 +1,74 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/settlements",
+            "handler": "Settlement.find",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/settlement/:id",
+            "handler": "Settlement.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/settlement",
+            "handler": "Settlement.create",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/settlement/:id",
+            "handler": "Settlement.update",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/settlement/:id",
+            "handler": "Settlement.destroy",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/settlement/pay",
+            "handler": "Settlement.pay",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/settlement/add-payment-method",
+            "handler": "Settlement.addPaymentMethod",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        }
+    ]
+}

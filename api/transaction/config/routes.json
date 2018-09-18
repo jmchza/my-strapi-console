@@ -1,0 +1,149 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/transactions",
+            "handler": "Transaction.find",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/gettransactions",
+            "handler": "Transaction.getTransactions",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/transaction/:id",
+            "handler": "Transaction.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/transaction/:id/relationships/:relation",
+            "handler": "Transaction.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/transaction/:id/:relation",
+            "handler": "Transaction.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/transaction",
+            "handler": "Transaction.create",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/transaction/withdrawal",
+            "handler": "Transaction.createWithdrawal",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/transaction/deposit",
+            "handler": "Transaction.createDeposit",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/transaction/:id",
+            "handler": "Transaction.update",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/transaction/:id",
+            "handler": "Transaction.destroy",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/transaction/:id/relationships/:relation",
+            "handler": "Transaction.createRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/transaction/:id/relationships/:relation",
+            "handler": "Transaction.updateRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/transaction/:id/relationships/:relation",
+            "handler": "Transaction.destroyRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/transaction/confirm",
+            "handler": "Transaction.confirmMandate",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/transaction/money-received",
+            "handler": "Transaction.moneyReceived"
+        }
+    ]
+}

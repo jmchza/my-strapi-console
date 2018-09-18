@@ -9,7 +9,7 @@ const fs = require("fs")
 const path = require("path")
 const joi = require("joi")
 const parseNumber = require("libphonenumber-js").parseNumber
-// const callDecimoApi = require("../../../utils/decimoApi")
+const callDecimoApi = require("../../../utils/decimoApi")
 const JsonApiError = require("../../../utils/json-api-error")
 
 /**

@@ -1,0 +1,613 @@
+{
+    "routes": [
+        {
+            "method": "POST",
+            "path": "/register/init",
+            "handler": "Account.initRegisterData"
+        },
+        {
+            "method": "POST",
+            "path": "/register/easystep",
+            "handler": "Account.easyRegistration"
+        },
+        {
+            "method": "POST",
+            "path": "/register/complete-registration",
+            "handler": "Account.completeProfileRegistration",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/register/complete",
+            "handler": "Account.completeRegistration"
+        },
+        {
+            "method": "POST",
+            "path": "/account/update-not-validated-user",
+            "handler": "Account.updateNotValidatedUserInfo"
+        },
+        {
+            "method": "DELETE",
+            "path": "/register/fileremove/:taskid",
+            "handler": "Account.removeTask"
+        },
+        {
+            "method": "POST",
+            "path": "/register/upload",
+            "handler": "Account.uploadTask"
+        },
+        {
+            "method": "POST",
+            "path": "/account/direct-debit-mandate",
+            "handler": "Account.directDebitMandate",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/account/payment-statistic",
+            "handler": "Account.getPaymentStatistic",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/account/stats",
+            "handler": "Account.stats",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/account/invoice-stats",
+            "handler": "Account.getInvoiceStats",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/account/invoice/search/",
+            "handler": "Account.searchInvoice",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/account/invoice/search/:needle",
+            "handler": "Account.searchInvoice",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/account/invoice/search/id/:id",
+            "handler": "Account.searchInvoice",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/account/customer/search/",
+            "handler": "Account.searchCustomer",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/account/customer/search/:needle",
+            "handler": "Account.searchCustomer",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/account/template/search/:type/",
+            "handler": "Account.searchTemplate",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/account/template/search/:type/:keyword",
+            "handler": "Account.searchTemplate",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/account/stats/current",
+            "handler": "Account.statsCurrent",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/account",
+            "handler": "Account.findOne",
+            "type": "User",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/account/notifications",
+            "handler": "Account.userNotifications",
+            "type": "notification",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/account/transactions",
+            "handler": "Account.getUserTransactions",
+            "type": "transaction",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/account/documents",
+            "handler": "Account.findDocuments",
+            "type": "document",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/account/products",
+            "handler": "Account.findProducts",
+            "type": "product",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/account/:relation",
+            "handler": "Account.findOne",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/account/invoices",
+            "handler": "Account.findInvoices",
+            "type": "invoice",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/account/settlements",
+            "handler": "Account.findSettlements",
+            "type": "settlement",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/account/settlements/statistics/:type",
+            "handler": "Account.getSettlementStatistic",
+            "type": "settlement",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/account/invoices/bought",
+            "handler": "Account.findBoughtInvoices",
+            "type": "invoice",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/account/usersettings",
+            "handler": "Account.getUserSettings",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/account/emailcheck/:email",
+            "handler": "Account.checkEmailExist"
+        },
+        {
+            "method": "POST",
+            "path": "/account/customer-number-check",
+            "handler": "Account.checkCustomerNumberExist"
+        },
+        {
+            "method": "POST",
+            "path": "/account/customer-number-check/:id",
+            "handler": "Account.checkCustomerNumberExist"
+        },
+        {
+            "method": "GET",
+            "path": "/account/ibancheck/:iban",
+            "handler": "Account.checkIbanExist"
+        },
+        {
+            "method": "POST",
+            "path": "/account/premium-plan",
+            "handler": "Account.changePremiumPlan",
+            "config": {
+                "policies": [
+                    "global.isSeller"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/account/keep-current-plan",
+            "handler": "Account.keepCurrentPlan",
+            "config": {
+                "policies": [
+                    "global.isSeller"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/account/assign-banktransfer",
+            "handler": "Account.assignBankTransfer",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/account/invoicenumbercheck",
+            "handler": "Account.checkInvoiceNumber",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/account/invoicenumbercheck/:id",
+            "handler": "Account.checkInvoiceNumber",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/account/signed-document/:userId/:hash",
+            "handler": "Account.directDebitMandateCallback"
+        },
+        {
+            "method": "POST",
+            "path": "/account/bankaccount",
+            "handler": "Account.addNewUserBankaccount",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/account/set-primary-bankaccount/:id",
+            "handler": "Account.setUserPrimaryBankaccount",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/account/get-current-plan",
+            "handler": "Account.getCurrentPlan",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/account/invoice/:id",
+            "handler": "Account.updateInvoice",
+            "type": "invoice",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated",
+                    "global.isSeller"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/account/invoicesale/:id",
+            "handler": "Invoicesale.updateInvoiceSale",
+            "type": "invoicesale",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated",
+                    "global.isSeller"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/account/uploadprofilepicture",
+            "handler": "User.uploadUserImage",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/account/upload-dunning-contract",
+            "handler": "Account.uploadDunningContract",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/account/submit-dunning-contract",
+            "handler": "Account.submitDunningContract",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/account/changepassword",
+            "handler": "User.changePassword",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/account/primarybankaccount",
+            "handler": "User.udpateUserBankAccount",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/account",
+            "handler": "User.updateUserField",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/account/update/setting",
+            "handler": "Account.editUserSetting",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/account/customer/add",
+            "handler": "Account.addOrEditMyCustomer",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/account/customer/:id/edit",
+            "handler": "Account.addOrEditMyCustomer",
+            "type": "customer",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/account/customer/:id/edit/field",
+            "handler": "Account.editCustomerFieldValue",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/account/wallet-status-change",
+            "handler": "Account.walletStatusChange"
+        },
+        {
+            "method": "POST",
+            "path": "/account/offer",
+            "handler": "Account.addOrEditOffer",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/account/offer/:id/edit",
+            "handler": "Account.addOrEditOffer",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/account/generate-dunning-contract",
+            "handler": "Account.generateDunningContract",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/account/confirm-dunning-contract/:id",
+            "handler": "Account.confirmDunningContract",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/account/download-dunning-contract",
+            "handler": "Account.downloadDunningContract",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/account/document/:id",
+            "handler": "Document.deleteDocument",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/account/:activationCode/activation",
+            "handler": "Account.activation"
+        },
+        {
+            "method": "POST",
+            "path": "/account/tax",
+            "handler": "User.saveTax",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/account/bankaccount/:id",
+            "handler": "Account.removeUserBankaccount",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/account/setting/:id",
+            "handler": "Account.deleteUserSetting",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        }
+    ]
+}

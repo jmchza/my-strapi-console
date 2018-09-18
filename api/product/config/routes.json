@@ -1,0 +1,54 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/products",
+            "handler": "Product.find",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/product/:id",
+            "handler": "Product.findOne",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/product",
+            "handler": "Product.create",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/product/:id",
+            "handler": "Product.update",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/product/:id",
+            "handler": "Product.destroy",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        }
+    ]
+}

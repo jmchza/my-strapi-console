@@ -1,0 +1,33 @@
+{
+    "connection": "default",
+    "collectionName": "contact",
+    "info": {
+        "name": "contact",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "user": {
+            "model": "user"
+        },
+        "language": {
+            "type": "string",
+            "defaultTo": "de"
+        },
+        "message": {
+            "type": "text"
+        },
+        "platform": {
+            "type": "string"
+        },
+        "osVersion": {
+            "type": "string"
+        }
+    }
+}

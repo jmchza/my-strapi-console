@@ -1,0 +1,59 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/contentitem/:key/:language",
+            "handler": "Contentitem.findByKeyAndLanguage"
+        },
+        {
+            "method": "GET",
+            "path": "/contentitems",
+            "handler": "Contentitem.find",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/contentitem/:id",
+            "handler": "Contentitem.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/contentitem",
+            "handler": "Contentitem.create",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/contentitem/:id",
+            "handler": "Contentitem.update",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/contentitem/:id",
+            "handler": "Contentitem.destroy",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        }
+    ]
+}

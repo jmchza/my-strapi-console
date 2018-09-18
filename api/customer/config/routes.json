@@ -6,7 +6,7 @@
             "handler": "Customer.find",
             "config": {
                 "policies": [
-                    
+                    "global.isAdmin"
                 ]
             }
         },
@@ -16,7 +16,7 @@
             "handler": "Customer.generateCustomerNumber",
             "config": {
                 "policies": [
-                    
+                    "global.isAuthenticated"
                 ]
             }
         },
@@ -26,7 +26,7 @@
             "handler": "Customer.findOne",
             "config": {
                 "policies": [
-                    
+                    "global.isAuthenticated"
                 ]
             }
         },
@@ -36,7 +36,7 @@
             "handler": "Customer.findOne",
             "config": {
                 "policies": [
-                    
+                    "global.isAdmin"
                 ]
             }
         },
@@ -46,7 +46,7 @@
             "handler": "Customer.findOne",
             "config": {
                 "policies": [
-                    
+                    "global.isAdmin"
                 ]
             }
         },
@@ -56,7 +56,7 @@
             "handler": "Customer.create",
             "config": {
                 "policies": [
-                    
+                    "global.isAuthenticated"
                 ]
             }
         },
@@ -66,7 +66,7 @@
             "handler": "Customer.update",
             "config": {
                 "policies": [
-                    
+                    "global.isAdmin"
                 ]
             }
         },
@@ -76,7 +76,7 @@
             "handler": "Customer.deleteCustomer",
             "config": {
                 "policies": [
-                    
+                    "global.isAuthenticated"
                 ]
             }
         },
@@ -86,7 +86,7 @@
             "handler": "Customer.destroy",
             "config": {
                 "policies": [
-                    
+                    "global.isAdmin"
                 ]
             }
         },
@@ -96,7 +96,7 @@
             "handler": "Customer.createRelation",
             "config": {
                 "policies": [
-                    
+                    "global.isAdmin"
                 ]
             }
         },
@@ -106,7 +106,7 @@
             "handler": "Customer.updateRelation",
             "config": {
                 "policies": [
-                    
+                    "global.isAdmin"
                 ]
             }
         },
@@ -116,7 +116,7 @@
             "handler": "Customer.destroyRelation",
             "config": {
                 "policies": [
-                    
+                    "global.isAdmin"
                 ]
             }
         }

@@ -1,0 +1,53 @@
+{
+    "connection": "default",
+    "collectionName": "project",
+    "info": {
+        "name": "project",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "code": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "price": {
+            "type": "decimal"
+        },
+        "totalTime": {
+            "type": "integer"
+        },
+        "estimate": {
+            "type": "integer"
+        },
+        "duedate": {
+            "type": "date"
+        },
+        "products": {
+            "collection": "product",
+            "via": "project"
+        },
+        "customer": {
+            "model": "customer"
+        },
+        "fixprice": {
+            "type": "boolean",
+            "defaultsTo": false
+        },
+        "afterhours": {
+            "type": "boolean",
+            "defaultsTo": false
+        }
+    }
+}

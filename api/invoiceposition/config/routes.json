@@ -1,0 +1,104 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/invoicepositions",
+            "handler": "Invoiceposition.find",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/invoiceposition/:id",
+            "handler": "Invoiceposition.findOne",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/invoiceposition/:id/relationships/:relation",
+            "handler": "Invoiceposition.findOne",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/invoiceposition/:id/:relation",
+            "handler": "Invoiceposition.findOne",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/invoiceposition",
+            "handler": "Invoiceposition.create",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/invoiceposition/:id",
+            "handler": "Invoiceposition.update",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/invoiceposition/:id",
+            "handler": "Invoiceposition.destroy",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/invoiceposition/:id/relationships/:relation",
+            "handler": "Invoiceposition.createRelation",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/invoiceposition/:id/relationships/:relation",
+            "handler": "Invoiceposition.updateRelation",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/invoiceposition/:id/relationships/:relation",
+            "handler": "Invoiceposition.destroyRelation",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        }
+    ]
+}

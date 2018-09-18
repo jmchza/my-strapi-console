@@ -1,0 +1,59 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/changelogs",
+            "handler": "Changelog.find",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/changelog/newest",
+            "handler": "Changelog.getChangelog"
+        },
+        {
+            "method": "GET",
+            "path": "/changelog/:id",
+            "handler": "Changelog.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/changelog",
+            "handler": "Changelog.create",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/changelog/:id",
+            "handler": "Changelog.update",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/changelog/:id",
+            "handler": "Changelog.destroy",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        }
+    ]
+}

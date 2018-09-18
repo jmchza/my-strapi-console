@@ -1,0 +1,119 @@
+{
+    "routes": [
+        {
+            "method": "POST",
+            "path": "/admin/checkbanktransfers",
+            "handler": "Administrator.initCheckBankTransfers",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/admin/send-newsletter",
+            "handler": "Administrator.sendNewsletter",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/admin/generate-monthly-seller-settlement/:id",
+            "handler": "Administrator.generateMonthlySellerSettlement"
+        },
+        {
+            "method": "POST",
+            "path": "/admin/edit/usersetting",
+            "handler": "Administrator.editSettingByAdmin",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/admin/settlements/:id",
+            "handler": "Administrator.getSettlements",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/admin/transactions/:id",
+            "handler": "Administrator.getTransactions",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/admin/accept-dunning-contract/:userid",
+            "handler": "Administrator.acceptDunningContract",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/admin/reject-dunning-contract/:userid",
+            "handler": "Administrator.rejectDunningContract",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/admin/invoices/:id",
+            "handler": "Administrator.getInvoices",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/admin/invoice/:id",
+            "handler": "Administrator.getInvoice",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/admin/user/:id",
+            "handler": "Administrator.editUserDetail",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/admin/faktoora-stats",
+            "handler": "Administrator.retrieveFaktooraStats",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        }
+    ]
+}

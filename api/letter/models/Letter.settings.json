@@ -1,0 +1,72 @@
+{
+    "connection": "default",
+    "collectionName": "letter",
+    "info": {
+        "name": "letter",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "user": {
+            "model": "user"
+        },
+        "customer": {
+            "model": "customer"
+        },
+        "signature": {
+            "model": "upload"
+        },
+        "invoice": {
+            "model": "invoice"
+        },
+        "offer": {
+            "model": "offer"
+        },
+        "category": {
+            "type": "string"
+        },
+        "subject": {
+            "type": "string"
+        },
+        "salutation": {
+            "type": "string"
+        },
+        "content": {
+            "type": "string"
+        },
+        "greeting": {
+            "type": "string"
+        },
+        "signatureName": {
+            "type": "string"
+        },
+        "sentDate": {
+            "description": "The date when the letter has to be sent",
+            "type": "date"
+        },
+        "status": {
+            "type": "string",
+            "defaultTo": "draft"
+        },
+        "faktooraId": {
+            "type": "string",
+            "unique": true
+        },
+        "extras": {
+            "type": "json"
+        },
+        "clientId": {
+            "type": "string"
+        },
+        "document": {
+            "model": "document",
+            "via": "reference"
+        }
+    }
+}

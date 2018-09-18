@@ -1,0 +1,36 @@
+{
+    "connection": "default",
+    "collectionName": "statushistory",
+    "info": {
+        "name": "statushistory",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "created_at": {
+            "type": "date"
+        },
+        "updated_at": {
+            "type": "date"
+        },
+        "oldStatus": {
+            "type": "string"
+        },
+        "newStatus": {
+            "type": "string"
+        },
+        "reference": {
+            "model": "*",
+            "filter": "field"
+        },
+        "data": {
+            "type": "json"
+        }
+    }
+}

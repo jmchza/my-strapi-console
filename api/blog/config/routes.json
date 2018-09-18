@@ -1,0 +1,49 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/blogs",
+            "handler": "Blog.search"
+        },
+        {
+            "method": "GET",
+            "path": "/blog/:id",
+            "handler": "Blog.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/blog",
+            "handler": "Blog.create",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/blog/:id",
+            "handler": "Blog.update",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/blog/:id",
+            "handler": "Blog.destroy",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "connection": "default",
+    "collectionName": "template",
+    "info": {
+        "name": "template",
+        "description": ""
+    },
+    "options": {
+        "increments": true,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "user": {
+            "model": "user"
+        },
+        "name": {
+            "type": "string"
+        },
+        "type": {
+            "type": "string"
+        },
+        "data": {
+            "type": "json"
+        }
+    }
+}

@@ -1,0 +1,74 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/statushistorys",
+            "handler": "Statushistory.find",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/statushistory/:id",
+            "handler": "Statushistory.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/statushistory",
+            "handler": "Statushistory.create",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "PUT",
+            "path": "/statushistory/:id",
+            "handler": "Statushistory.update",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/statushistory/:id",
+            "handler": "Statushistory.destroy",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/statushistory/:parentId/:relation",
+            "handler": "Statushistory.createRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/statushistory/:parentId/:relation/:id",
+            "handler": "Statushistory.destroyRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        }
+    ]
+}

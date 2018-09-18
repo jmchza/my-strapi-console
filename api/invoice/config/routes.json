@@ -1,0 +1,334 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/buy/invoices",
+            "handler": "Invoice.find",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/demand/invoices",
+            "handler": "Invoice.getDemandInvoices",
+            "type": "invoice",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/invoices",
+            "handler": "Invoice.findAll",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/invoice/generate-invoice-number",
+            "handler": "Invoice.generateInvoiceNumber",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/invoicebuyer/:id",
+            "handler": "Invoice.findBuyer",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/invoicedetails/:faktooraId",
+            "handler": "Invoice.findOneByFaktooraId",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/invoice/generate-faktoora-id",
+            "handler": "Invoice.generateFaktooraId",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/invoice/:id",
+            "handler": "Invoice.findOne",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/invoice/:faktooraId/documents",
+            "handler": "Invoice.getInvoiceDocumentByFaktooraId",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/invoice/:invoiceid/download/:fileid",
+            "handler": "Invoice.downloadInvoiceFile",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/invoice/:id/relationships/:relation",
+            "handler": "Invoice.findOne",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/invoice/:id/csv",
+            "handler": "Invoice.exportCsv",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/invoices/csv",
+            "handler": "Invoice.exportAllCsv",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/invoice/:id/xls",
+            "handler": "Invoice.exportXls",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/invoice/:id/generate-subrogation-letter",
+            "handler": "Invoice.generateSubrogationAndAssignmentAgreementLetters",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/invoice/:id/:relation",
+            "handler": "Invoice.findOne",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/invoice/:id/decimo",
+            "handler": "Invoice.createDecimoInvoice",
+            "config": {
+                "policies": [
+                    "global.isSeller"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/invoice/:id/confirmBuyerCanPay",
+            "handler": "Invoice.confirmBuyerCanPay",
+            "config": {
+                "policies": [
+                    "global.isSeller"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/invoice/create",
+            "handler": "Invoice.create",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated",
+                    "global.isSeller"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/invoice/import",
+            "handler": "Invoice.importInvoice",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated",
+                    "global.isSeller"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/invoice/sendInvoice",
+            "handler": "Invoice.sendInvoice",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated",
+                    "global.isSeller"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/invoice",
+            "handler": "Invoice.create",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated",
+                    "global.isSeller"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/invoice/abort/:id",
+            "handler": "Invoice.abort",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated",
+                    "global.isSeller"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/invoice/:id",
+            "handler": "Invoice.update",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/invoice/:id/publish",
+            "handler": "Invoice.publishAnInvoice",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated",
+                    "global.isSeller"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/invoice/:id",
+            "handler": "Invoice.update",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/invoice/:id",
+            "handler": "Invoice.destroy",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated",
+                    "global.isSeller"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/invoice/:id/relationships/:relation",
+            "handler": "Invoice.createRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/invoice/:id/relationships/:relation",
+            "handler": "Invoice.updateRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/invoice/:id/relationships/:relation",
+            "handler": "Invoice.destroyRelation",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/invoice/upload",
+            "handler": "Invoice.uploadInvoice",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated",
+                    "global.isSeller"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/invoice/:id/mark-as-paid",
+            "handler": "Invoice.markAsPaid",
+            "config": {
+                "policies": [
+                    "global.isAuthenticated",
+                    "global.isSeller"
+                ]
+            }
+        }
+    ]
+}

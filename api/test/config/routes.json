@@ -1,0 +1,14 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/test/notify",
+            "handler": "Test.sendNotification",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "connection": "default",
+    "collectionName": "address",
+    "info": {
+        "name": "address",
+        "description": ""
+    },
+    "options": {
+        "increments": false,
+        "timestamps": true,
+        "comment": "",
+        "idAttribute": "id",
+        "idAttributeType": "uuid"
+    },
+    "attributes": {
+        "affix": {
+            "type": "string"
+        },
+        "streetAndHouseNo": {
+            "type": "string"
+        },
+        "city": {
+            "type": "string"
+        },
+        "postcode": {
+            "type": "string"
+        }
+    }
+}

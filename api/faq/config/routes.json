@@ -1,0 +1,49 @@
+{
+    "routes": [
+        {
+            "method": "GET",
+            "path": "/faqs",
+            "handler": "Faq.find"
+        },
+        {
+            "method": "GET",
+            "path": "/faq/:id",
+            "handler": "Faq.findOne",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/faq",
+            "handler": "Faq.create",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/faq/:id",
+            "handler": "Faq.update",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/faq/:id",
+            "handler": "Faq.destroy",
+            "config": {
+                "policies": [
+                    "global.isAdmin"
+                ]
+            }
+        }
+    ]
+}
